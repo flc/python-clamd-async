@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from importlib.metadata import version, PackageNotFoundError
 
 try:
-    __version__ = __import__('pkg_resources').get_distribution('clamd').version
-except:
+    __version__ = version('clamd')
+except PackageNotFoundError:
     __version__ = ''
 
 # $Source$
